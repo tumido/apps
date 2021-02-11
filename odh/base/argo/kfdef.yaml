@@ -11,7 +11,7 @@ spec:
         repoRef:
           name: manifests
           path: odh-common
-        name: odh-common
+      name: odh-common
     - kustomizeConfig:
         repoRef:
           name: manifests
@@ -22,7 +22,16 @@ spec:
           name: manifests
           path: odhargo/odhargo
       name: odhargo
+    - kustomizeConfig:
+        overlays:
+          - opf-settings
+        repoRef:
+          name: opf
+          path: odh/base/argo/overrides/odhargo
+      name: odhargo
   repos:
     - name: manifests
       uri: "https://github.com/opendatahub-io/odh-manifests/tarball/v1.0.0"
+    - name: opf
+      uri: "https://github.com/operate-first/apps/tarball/master"
   version: v1.0.0

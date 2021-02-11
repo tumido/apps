@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: workflow-controller-configmap
+data:
+  workflowDefaults: |
+    spec:
+      serviceAccountName: argo-workflow
+
+      # must complete in 8h (28,800 seconds)
+      activeDeadlineSeconds: 28800
+
+      # keep workflows for 24h (86,400 seconds). If workflow succeeded keep for 1h (3,600 seconds) only
+      ttlStrategy:
+        secondsAfterCompletion: 86400
+        secondsAfterSuccess: 3600
+
+  sso: |
+    issuer: http://dex-opf-auth.apps.tcoufaltest.lab.upshift.rdu2.redhat.com/api/dex
+    clientId:
+      name: sso-secret
+      key: clientId
+    clientSecret:
+      name: sso-secret
+      key: clientSecret
+    redirectUrl: http://argo-server-opf-argo.apps.tcoufaltest.lab.upshift.rdu2.redhat.com/oauth2/callback
+    scopes:
+      - groups
+    rbac:
+      enabled: false
