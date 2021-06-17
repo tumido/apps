@@ -2,5 +2,9 @@
 apiVersion: user.openshift.io/v1
 kind: Group
 metadata:
-  name: tufts-dcc-6
-users: []
+    name: tufts-dcc-6
+users:
+    - tumido
+    - psmiley2
+    - emizemi
+# FIXME: 1 accounts missing, group will be deleted anyways

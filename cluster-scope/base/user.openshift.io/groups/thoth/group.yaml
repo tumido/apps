@@ -2,5 +2,11 @@
 apiVersion: user.openshift.io/v1
 kind: Group
 metadata:
-  name: thoth
-users: []
+    name: thoth
+users:
+    - goern
+    - pacospace
+    - fridex
+    - harshad16
+    - KPostOffice
+    - xtuchyna

@@ -38,5 +38,6 @@ generators:
   - secret-generator.yaml
 
 patchesStrategicMerge:
+  - groups/cluster-admins_patch.yaml
   - oauths/cluster_patch.yaml
   - subscriptions/kubevirt-hyperconverged_patch.yaml

@@ -2,4 +2,8 @@ apiVersion: user.openshift.io/v1
 kind: Group
 metadata:
     name: redhat-cto-team
-users: []
+users:
+    - dstewart19 ??
+    # FIXME 2 accounts missing + first uncertain
+    - hpdempsey
+    - fabrizio8
