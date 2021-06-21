@@ -4,6 +4,7 @@ metadata:
   name: s2i-pytorch-py38-notebook
   labels:
     opendatahub.io/notebook-image: "true"
+  annotations:
     opendatahub.io/notebook-image-name: "Minimal Python with PyTorch"
 spec:
   lookupPolicy:
@@ -14,6 +15,6 @@ spec:
         openshift.io/imported-from: quay.io/thoth-station/s2i-pytorch-py38-notebook
       from:
         kind: DockerImage
-        name: 'quay.io/thoth-station/s2i-pytorch-py38-notebook:latest'
+        name: "quay.io/thoth-station/s2i-pytorch-py38-notebook:latest"
       referencePolicy:
         type: Local
